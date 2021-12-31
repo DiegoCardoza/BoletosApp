@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">BoletosApp</string>
+    <string name="etName_hint">Nombre</string>
+    <string name="etBusNumber_hint">Número de autbús</string>
+    <string name="etTotalAmount_hint">Importe total</string>
+    <string name="tilSeat_hint">Asiento</string>
+    <string name="tvDestiny_text">Destino:</string>
+    <string name="tvBusBrand_text">Marca del autobús:</string>
+    <string name="rbAdult_text">Adulto</string>
+    <string name="rbKid_text">Niño</string>
+    <string name="rbINAPAM_text">INAPAM</string>
+    <string name="rbStudent_text">Estudiante</string>
+    <string name="btnCreateTicket_text">Crear boleto</string>
+    <string name="tilDestiny_hint">Seleccionar destino</string>
+    <string-array name="busBrands">
+        <item>Seleccionar marca de autobús</item>
+        <item>TRASNPORTES FRONTERA</item>
+        <item>ROJO DE LOS ALTOS</item>
+    </string-array>
+    <string-array name="destinations">
+        <item>Seleccionar destino</item>
+        <item>MONTERREY NL</item>
+        <item>SANTA CATARINA NL</item>
+        <item>SALTILLO COA</item>
+        <item>RAMOS ARIZPE COA</item>
+    </string-array>
+</resources>

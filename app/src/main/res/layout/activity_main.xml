@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp"
+    tools:context=".ui.view.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/lyTitleApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/svContent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/tint"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCreateTicket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyTitleApp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/tvBusBrand_text"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:textColor="@color/tint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spBusBrands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_spinner_destination"
+                android:padding="10dp"
+                android:popupBackground="@color/white"
+                tools:entries="@array/busBrands" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etName_hint"
+                android:textColorHint="@color/tint"
+                app:boxStrokeColor="@color/tint"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/tint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
+                    tools:text="Person name" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSeat"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/tilSeat_hint"
+                android:textColorHint="@color/tint"
+                app:boxStrokeColor="@color/tint"
+                app:startIconDrawable="@drawable/ic_seat"
+                app:startIconTint="@color/tint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/black"
+                    tools:text="99" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/rgTicketType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbAdult"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/background_radio_button"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="2.5dp"
+                    android:text="@string/rbAdult_text"
+                    android:textColor="@drawable/txt_radio_button"
+                    android:textStyle="bold"
+                    tools:checked="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbKid"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/background_radio_button"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="2.5dp"
+                    android:text="@string/rbKid_text"
+                    android:textColor="@drawable/txt_radio_button"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbINAPAM"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/background_radio_button"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="2.5dp"
+                    android:text="@string/rbINAPAM_text"
+                    android:textColor="@drawable/txt_radio_button"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbStudent"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/background_radio_button"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:padding="2.5dp"
+                    android:text="@string/rbStudent_text"
+                    android:textColor="@drawable/txt_radio_button"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilBusNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etBusNumber_hint"
+                android:textColorHint="@color/tint"
+                app:boxStrokeColor="@color/tint"
+                app:startIconDrawable="@drawable/ic_bus"
+                app:startIconTint="@color/tint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBusNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="@color/black"
+                    tools:text="9999" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/tvDestiny_text"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:textColor="@color/tint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_spinner_destination"
+                android:padding="10dp"
+                android:popupBackground="@color/white"
+                tools:entries="@array/destinations" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTotalAmount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etTotalAmount_hint"
+                android:textColorHint="@color/tint"
+                app:boxStrokeColor="@color/tint"
+                app:startIconDrawable="@drawable/ic_money"
+                app:startIconTint="@color/tint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTotalAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    tools:text="999.99" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreateTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCreateTicket_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/tint"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ticket"
+        app:iconGravity="textStart"
+        app:iconSize="20dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
