@@ -40,6 +40,7 @@
 
     </LinearLayout>
 
+    <!-- Scrollview of content -->
     <ScrollView
         android:id="@+id/svContent"
         android:layout_width="match_parent"
